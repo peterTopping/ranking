@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
 
-import '../static/styles/index.scss';
+import 'antd/dist/antd.min.css';
+import '../static/styles/index.css';
 
 import dataController from '../hocs/dataController';
 import Header from '../components/Header';
