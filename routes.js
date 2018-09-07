@@ -6,8 +6,8 @@ const results = require('./controllers/results');
 const router = express.Router();
 
 router.get('/users', users.get);
-router.post('/user', users.post);
+router.post('/users', users.post);
 
-router.post('/result', results.post);
+router.post('/results', results.post);
 
 module.exports = router;

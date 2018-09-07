@@ -35,6 +35,7 @@ class RankingTable extends Component {
             <Table
                 columns={columns}
                 dataSource={dataSource}
+                style={{ backgroundColor: 'white' }}
             />
         );
     }
