@@ -5,7 +5,7 @@ class AddUser extends Component {
     render() {
         return (
             <Form
-                layout="inline"
+                layout="vertical"
                 onSubmit={this.props.addUser}
                 style={{ marginTop: '15px' }}
             >

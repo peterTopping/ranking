@@ -9,7 +9,7 @@ class AddResult extends Component {
 
         return (
             <Form
-                layout="inline"
+                layout="vertical"
                 onSubmit={addResult}
                 style={{ marginTop: '15px' }}
             >
@@ -41,8 +41,7 @@ class AddResult extends Component {
                         users={users}
                     />
                 </Form.Item>
-                <Form.Item>
-                    Losers score:
+                <Form.Item label="Losers score">
                     <InputNumber />
                 </Form.Item>
                 <Form.Item>
