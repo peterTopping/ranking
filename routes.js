@@ -5,9 +5,9 @@ const results = require('./controllers/results');
 
 const router = express.Router();
 
-router.get('/users', users.get);
-router.post('/users', users.post);
+router.get('/api/users', users.get);
+router.post('/api/users', users.post);
 
-router.post('/results', results.post);
+router.post('/api/results', results.post);
 
 module.exports = router;

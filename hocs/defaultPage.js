@@ -22,19 +22,7 @@ export default (Page) => class defaultPage extends Component {
     constructor(props) {
         super(props);
         this.state = dummyState;
-        this.addUser = this.addUser.bind(this);
-        this.addResult = this.addResult.bind(this);
         this.handleNavigation = this.handleNavigation.bind(this);
-    }
-
-    addUser(e) {
-        e.preventDefault();
-        axios.post('/users', {});
-    }
-
-    addResult(e) {
-        e.preventDefault();
-        axios.post('/results', {});
     }
 
     handleNavigation({ key }) {
@@ -43,8 +31,9 @@ export default (Page) => class defaultPage extends Component {
     }
 
     render() {
-        const { pathname } = this.props.url;
-        const selected = findIndex(pages, p => p.url === pathname);
+      console.log(this.props)
+        const { url } = this.props;
+        const selected = findIndex(pages, p => p.url === url);
 
         return (
             <Layout style={{ minHeight: '100vh' }}>
@@ -64,8 +53,7 @@ export default (Page) => class defaultPage extends Component {
                 <Layout.Content style={{ margin: '50px' }}>
                     <Page
                         {...this.state}
-                        addUser={this.addUser}
-                        addResult={this.addResult}
+                        {...this.props}
                     />
                 </Layout.Content>
             </Layout>

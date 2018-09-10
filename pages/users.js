@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { addUser } from '../actions';
 import defaultPage from '../hocs/defaultPage';
 import AddUser from '../components/AddUser';
 
@@ -15,4 +18,11 @@ class Users extends Component {
     }
 }
 
-export default defaultPage(Users);
+const mapDispatchToProps = (dispatch) => ({
+    addUser: bindActionCreators(addUser, dispatch),
+});
+
+export default connect(
+    (s) => s,
+    mapDispatchToProps,
+)(defaultPage(Users));

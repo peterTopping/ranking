@@ -4,13 +4,23 @@ import { Form, AutoComplete, Input, Button, Select, InputNumber } from 'antd';
 import UserInput from './UserInput';
 
 class AddResult extends Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.addResult({});
+    }
+
     render() {
         const { users, addResult } = this.props;
 
         return (
             <Form
                 layout="vertical"
-                onSubmit={addResult}
+                onSubmit={this.handleSubmit}
                 style={{ marginTop: '15px' }}
             >
                 <Form.Item>
