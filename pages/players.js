@@ -2,27 +2,27 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { addUser } from '../actions';
+import { addPlayer } from '../actions';
 import defaultPage from '../hocs/defaultPage';
-import AddUser from '../components/AddUser';
+import AddPlayer from '../components/AddPlayer';
 
-class Users extends Component {
+class Players extends Component {
     render() {
-        const { users, addUser } = this.props;
+        const { players, addPlayer } = this.props;
         return (
-            <AddUser
-                users={users}
-                addUser={addUser}
+            <AddPlayer
+                players={players}
+                addPlayer={addPlayer}
             />
         );
     }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addUser: bindActionCreators(addUser, dispatch),
+    addPlayer: bindActionCreators(addPlayer, dispatch),
 });
 
 export default connect(
     (s) => s,
     mapDispatchToProps,
-)(defaultPage(Users));
+)(defaultPage(Players));

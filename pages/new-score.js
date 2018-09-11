@@ -2,24 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { addResult } from '../actions';
+import { addScore } from '../actions';
 import defaultPage from '../hocs/defaultPage';
-import AddResult from '../components/AddResult';
+import AddScore from '../components/AddScore';
 
 class NewScore extends Component {
     render() {
-        const { users, addResult } = this.props;
+        const { players, addScore } = this.props;
         return (
-            <AddResult
-                users={users}
-                addResult={addResult}
+            <AddScore
+                players={players}
+                addScore={addScore}
             />
         );
     }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addResult: bindActionCreators(addResult, dispatch),
+    addScore: bindActionCreators(addScore, dispatch),
 });
 
 export default connect(

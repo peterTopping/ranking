@@ -1,13 +1,13 @@
 const express = require('express');
 
-const users = require('./controllers/users');
-const results = require('./controllers/results');
+const players = require('./controllers/players');
+const scores = require('./controllers/scores');
 
 const router = express.Router();
 
-router.get('/api/users', users.get);
-router.post('/api/users', users.post);
+router.get('/api/players', players.get);
+router.post('/api/players', players.post);
 
-router.post('/api/results', results.post);
+router.post('/api/scores', scores.post);
 
 module.exports = router;

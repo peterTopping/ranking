@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Form, AutoComplete, Input, Button, Select, InputNumber } from 'antd';
 
-import UserInput from './UserInput';
+import PlayerInput from './PlayerInput';
 
-class AddResult extends Component {
+class AddScore extends Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -11,11 +11,11 @@ class AddResult extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.addResult({});
+        this.props.addScore({});
     }
 
     render() {
-        const { users, addResult } = this.props;
+        const { players, addScore } = this.props;
 
         return (
             <Form
@@ -24,9 +24,9 @@ class AddResult extends Component {
                 style={{ marginTop: '15px' }}
             >
                 <Form.Item>
-                    <UserInput
+                    <PlayerInput
                         placeholder="Someone"
-                        users={users}
+                        players={players}
                     />
                 </Form.Item>
                 <Form.Item>
@@ -46,9 +46,9 @@ class AddResult extends Component {
                     </Select>
                 </Form.item>*/}
                 <Form.Item>
-                    <UserInput
+                    <PlayerInput
                         placeholder="Someone else"
-                        users={users}
+                        players={players}
                     />
                 </Form.Item>
                 <Form.Item label="Losers score">
@@ -56,7 +56,7 @@ class AddResult extends Component {
                 </Form.Item>
                 <Form.Item>
                     <Button htmlType="submit">
-                        Submit result
+                        Submit score
                     </Button>
                 </Form.Item>
             </Form>
@@ -64,4 +64,4 @@ class AddResult extends Component {
     }
 }
 
-export default AddResult;
+export default AddScore;

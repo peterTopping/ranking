@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { AutoComplete } from 'antd';
 
-class UserInput extends Component {
+class PlayerInput extends Component {
     constructor(props) {
         super(props);
-        this.state = { users: this.props.users };
+        this.state = { players: this.props.players };
     }
 
     render() {
         const { placeholder } = this.props;
-        const { users } = this.state;
-        const dataSource = users.map(u => u.name);
+        const { players } = this.state;
+        const dataSource = players.map(u => u.name);
 
         return (
             <AutoComplete
@@ -21,4 +21,4 @@ class UserInput extends Component {
     }
 }
 
-export default UserInput;
+export default PlayerInput;

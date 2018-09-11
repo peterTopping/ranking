@@ -15,7 +15,7 @@ const pages = [
     { url: null, label: 'Progress' },
     { url: null, label: 'Game history' },
     { url: '/new-score', label: 'Submit new score' },
-    { url: '/users', label: 'Add new player' },
+    { url: '/players', label: 'Add new player' },
 ];
 
 export default (Page) => class defaultPage extends Component {

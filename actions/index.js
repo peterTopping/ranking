@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const actionSpecs = [
-    { method: 'get', endpoint: 'users', name: 'getUsers', type: 'GET_USERS' },
-    { method: 'post', endpoint: 'users', name: 'addUser', type: 'POST_USER' },
-    { method: 'post', endpoint: 'results', name: 'addResult', type: 'POST_RESULT' },
+    { method: 'get', endpoint: 'players', name: 'getPlayers', type: 'GET_PLAYERS' },
+    { method: 'post', endpoint: 'players', name: 'addPlayer', type: 'POST_PLAYER' },
+    { method: 'post', endpoint: 'scores', name: 'addScore', type: 'POST_SCORE' },
 ];
 
 const actions = {};
@@ -25,13 +25,13 @@ actionSpecs.forEach(s => {
     }
 });
 
-const getUsers = actions.getUsers;
-const addUser = actions.addUser;
-const addResult = actions.addResult;
+const getPlayers = actions.getPlayers;
+const addPlayer = actions.addPlayer;
+const addScore = actions.addScore;
 
 export {
     actionSpecs,
-    getUsers,
-    addUser,
-    addResult,
+    getPlayers,
+    addPlayer,
+    addScore,
 };

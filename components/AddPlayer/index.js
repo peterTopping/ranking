@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Input, Button } from 'antd';
 
-class AddUser extends Component {
+class AddPlayer extends Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -9,7 +9,7 @@ class AddUser extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.addUser({});
+        this.props.addPlayer({});
     }
 
     render() {
@@ -24,7 +24,7 @@ class AddUser extends Component {
                 </Form.Item>
                 <Form.Item>
                     <Button htmlType="submit">
-                        Add user
+                        Add player
                     </Button>
                 </Form.Item>
             </Form>
@@ -32,4 +32,4 @@ class AddUser extends Component {
     }
 }
 
-export default AddUser;
+export default AddPlayer;

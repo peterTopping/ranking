@@ -27,8 +27,8 @@ const columns = [
 
 class RankingTable extends Component {
     render() {
-        const { users } = this.props;
-        const dataSource = sortBy(users, u => -u.score)
+        const { players } = this.props;
+        const dataSource = sortBy(players, u => -u.score)
             .map((u, i) => ({ ...u, rank: i, key: i }));
 
         return (

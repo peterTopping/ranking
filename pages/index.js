@@ -6,8 +6,8 @@ import RankingTable from '../components/RankingTable';
 
 class Dashboard extends Component {
     render() {
-        const { users } = this.props;
-        return <RankingTable users={users} />;
+        const { players } = this.props;
+        return <RankingTable players={players} />;
     }
 }
 
