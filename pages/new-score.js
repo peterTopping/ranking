@@ -8,11 +8,11 @@ import AddScore from '../components/AddScore';
 
 class NewScore extends Component {
     render() {
-        const { players, addScore } = this.props;
+        const { players } = this.props;
         return (
             <AddScore
-                players={players}
-                addScore={addScore}
+                players={players.data}
+                addScore={this.props.addScore}
             />
         );
     }

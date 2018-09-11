@@ -4,14 +4,9 @@ import { sortBy } from 'lodash';
 
 const columns = [
     {
-        title: 'Rank',
-        key:  'rank',
-        dataIndex: 'rank',
-    },
-    {
-        title: 'Score',
-        key: 'score',
-        dataIndex: 'score',
+        title: 'Ranking',
+        key: 'ranking',
+        dataIndex: 'ranking',
     },
     {
         title: 'Name',
@@ -28,8 +23,8 @@ const columns = [
 class RankingTable extends Component {
     render() {
         const { players } = this.props;
-        const dataSource = sortBy(players, u => -u.score)
-            .map((u, i) => ({ ...u, rank: i, key: i }));
+        const dataSource = sortBy(players, u => -u.ranking)
+            .map((u, i) => ({ ...u, key: i }));
 
         return (
             <Table

@@ -7,7 +7,6 @@ import axios from 'axios';
 import 'antd/dist/antd.min.css';
 import '../static/styles/index.css';
 
-import dummyState from './dummyState';
 import Header from '../components/Header';
 
 const pages = [
@@ -19,9 +18,17 @@ const pages = [
 ];
 
 export default (Page) => class defaultPage extends Component {
+    static async getInitialProps(ctx) {
+        let pageProps = {};
+        if (Page.getInitialProps) {
+          pageProps = await Page.getInitialProps(ctx);
+        }
+
+        return { ...pageProps };
+    }
+
     constructor(props) {
         super(props);
-        this.state = dummyState;
         this.handleNavigation = this.handleNavigation.bind(this);
     }
 
@@ -31,7 +38,6 @@ export default (Page) => class defaultPage extends Component {
     }
 
     render() {
-      console.log(this.props)
         const { url } = this.props;
         const selected = findIndex(pages, p => p.url === url);
 
@@ -51,10 +57,7 @@ export default (Page) => class defaultPage extends Component {
                     </Menu>
                 </Layout.Sider>
                 <Layout.Content style={{ margin: '50px' }}>
-                    <Page
-                        {...this.state}
-                        {...this.props}
-                    />
+                    <Page {...this.props} />
                 </Layout.Content>
             </Layout>
         );

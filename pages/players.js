@@ -8,11 +8,11 @@ import AddPlayer from '../components/AddPlayer';
 
 class Players extends Component {
     render() {
-        const { players, addPlayer } = this.props;
+        const { players } = this.props;
         return (
             <AddPlayer
-                players={players}
-                addPlayer={addPlayer}
+                players={players.data}
+                addPlayer={this.props.addPlayer}
             />
         );
     }

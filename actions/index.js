@@ -6,8 +6,14 @@ const actionSpecs = [
     { method: 'post', endpoint: 'scores', name: 'addScore', type: 'POST_SCORE' },
 ];
 
+const actionTypes = {};
 const actions = {};
+
 actionSpecs.forEach(s => {
+    actionTypes[s.type] = s.type;
+    actionTypes[`${s.type}_SUCCESS`] = `${s.type}_SUCCESS`;
+    actionTypes[`${s.type}_FAILURE`] = `${s.type}_FAILURE`;
+
     actions[s.name] = (payload) => {
         return (dispatch) => {
             dispatch({ type: s.type });
@@ -30,7 +36,7 @@ const addPlayer = actions.addPlayer;
 const addScore = actions.addScore;
 
 export {
-    actionSpecs,
+    actionTypes,
     getPlayers,
     addPlayer,
     addScore,
